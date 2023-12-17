@@ -1,5 +1,3 @@
-import { UserButton } from "@clerk/nextjs";
-
 type Props = {};
 
 const Page = (props: Props) => {
