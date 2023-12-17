@@ -1,5 +1,9 @@
 import { SignUp } from "@clerk/nextjs";
 
-export default function Page() {
+type Props = {};
+
+const Page = (props: Props) => {
   return <SignUp />;
-}
+};
+
+export default Page;

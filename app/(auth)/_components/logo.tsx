@@ -7,7 +7,9 @@ const font = Poppins({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-export const Logo = () => {
+type Props = {};
+
+export const Logo = (props: Props) => {
   return (
     <div className="flex flex-col items-center gap-y-4">
       <div className="bg-white rounded-full p-1">
