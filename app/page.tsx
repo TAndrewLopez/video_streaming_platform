@@ -1,3 +1,3 @@
-export default function Home() {
-  return <main className="font-bold">Hello Universe</main>;
+export default function Page() {
+  return <div>Only authenticated users can see this.</div>;
 }
