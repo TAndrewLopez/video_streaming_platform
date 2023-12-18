@@ -8,7 +8,7 @@ import { Hint } from "@/components/hint";
 type Props = {};
 
 export const Toggle = (props: Props) => {
-  const { collapsed, onCollapse, onExpand } = useSidebar((state) => state);
+  const { collapsed, onCollapse, onExpand } = useSidebar((s) => s);
   const label = collapsed ? "Expand" : "Collapse";
   return (
     <>
@@ -37,5 +37,3 @@ export const Toggle = (props: Props) => {
     </>
   );
 };
-
-export default Toggle;

@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const Wrapper = ({ children }: Props) => {
-  const { collapsed } = useSidebar((state) => state);
+  const { collapsed } = useSidebar((s) => s);
   return (
     <aside
       className={cn(
