@@ -2,7 +2,7 @@ import { SignIn } from "@clerk/nextjs";
 
 type Props = {};
 
-const Page = (props: Props) => {
+const Page = ({}: Props) => {
   return <SignIn />;
 };
 

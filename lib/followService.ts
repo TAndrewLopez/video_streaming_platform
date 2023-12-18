@@ -1,6 +1,31 @@
 import { db } from "./db";
 import { getSelf } from "./authService";
 
+export const getFollowedUsers = async () => {
+    try {
+        const self = await getSelf();
+        const followedUsers = db.follow.findMany({
+            where: {
+                followerID: self.id,
+                following: {
+                    blocking: {
+                        none: {
+                            blockedID: self.id
+                        }
+                    }
+                }
+            },
+            include: {
+                following: true,
+            },
+        });
+
+        return followedUsers;
+    } catch (error) {
+        return [];
+    }
+};
+
 export const isFollowingUser = async (id: string) => {
     try {
         const self = await getSelf();
@@ -75,20 +100,20 @@ export const unFollowUser = async (id: string) => {
     const existingFollow = await db.follow.findFirst({
         where: {
             followerID: self.id,
-            followingID: otherUser.id
-        }
-    })
+            followingID: otherUser.id,
+        },
+    });
 
-    if (!existingFollow) throw new Error("Not following")
+    if (!existingFollow) throw new Error("Not following");
 
     const follow = await db.follow.delete({
         where: {
             id: existingFollow.id,
         },
         include: {
-            following: true
-        }
-    })
+            following: true,
+        },
+    });
 
-    return follow
+    return follow;
 };

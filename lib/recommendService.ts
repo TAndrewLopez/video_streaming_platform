@@ -2,23 +2,45 @@ import { db } from "./db";
 import { getSelf } from "./authService";
 
 export const getRecommend = async () => {
-    let userId;
+    let userID;
 
     try {
         const user = await getSelf()
-        userId = user.id
+        userID = user.id
     } catch (error) {
-        userId = null
+        userID = null
     }
 
     let users = []
 
-    if (userId) {
+    if (userID) {
         users = await db.user.findMany({
             where: {
-                NOT: {
-                    id: userId
-                }
+                AND: [
+                    {
+                        NOT: {
+                            id: userID
+                        }
+                    },
+                    {
+                        NOT: {
+                            followedBy: {
+                                some: {
+                                    followerID: userID
+                                }
+                            }
+                        }
+                    },
+                    {
+                        NOT: {
+                            blocking: {
+                                some: {
+                                    blockedID: userID
+                                }
+                            }
+                        }
+                    }
+                ]
             },
             orderBy: {
                 createdAt: 'desc'

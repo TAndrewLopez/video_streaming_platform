@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 type Props = {};
 
-export const Search = (props: Props) => {
+export const Search = ({}: Props) => {
   const router = useRouter();
   const [value, setValue] = useState("");
 

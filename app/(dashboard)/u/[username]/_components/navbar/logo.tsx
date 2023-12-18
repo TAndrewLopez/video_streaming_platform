@@ -19,7 +19,7 @@ export const Logo = ({}: Props) => {
         </div>
         <div className={cn("hidden lg:block", font.className)}>
           <p className="text-lg font-semibold">Video Streaming Platform</p>
-          <p className="text-xs text-muted-foreground">Let&apos;s play</p>
+          <p className="text-xs text-muted-foreground">Creator Dashboard</p>
         </div>
       </div>
     </Link>
