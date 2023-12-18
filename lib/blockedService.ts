@@ -11,7 +11,7 @@ export const isBlockedByUser = async (id: string) => {
             },
         });
         if (!otherUser) throw new Error("User not found");
-        if (otherUser.id === self.id) return true;
+        if (otherUser.id === self.id) return false;
 
         const existingBlock = await db.block.findUnique({
             where: {
