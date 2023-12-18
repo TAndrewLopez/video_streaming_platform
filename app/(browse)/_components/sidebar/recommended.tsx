@@ -1,11 +1,13 @@
 "use client";
 
-import { User } from "@prisma/client";
+import { Stream, User } from "@prisma/client";
 import { useSidebar } from "@/store/useSidebar";
 import { UserItem, UserItemSkelton } from "./userItem";
 
 type Props = {
-  data: User[];
+  data: (User & {
+    stream: Stream | null;
+  })[];
 };
 
 export const Recommended = ({ data }: Props) => {
@@ -20,12 +22,12 @@ export const Recommended = ({ data }: Props) => {
         </div>
       )}
       <ul className="space-y-2 px-2">
-        {data.map(({ id, username, imageURL }) => (
+        {data.map(({ id, imageURL, username, stream }) => (
           <UserItem
             key={id}
             imageURL={imageURL}
             username={username}
-            isLive={false}
+            isLive={stream?.isLive}
           />
         ))}
       </ul>

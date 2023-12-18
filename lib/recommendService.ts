@@ -17,11 +17,13 @@ export const getRecommend = async () => {
         users = await db.user.findMany({
             where: {
                 AND: [
+                    // CHECK WE ARE NOT THE USER
                     {
                         NOT: {
                             id: userID
                         }
                     },
+                    // CHECK WE AREN'T FOLLOWING THE USER
                     {
                         NOT: {
                             followedBy: {
@@ -31,6 +33,7 @@ export const getRecommend = async () => {
                             }
                         }
                     },
+                    // CHECK WE AREN'T BLOCKING THE USER
                     {
                         NOT: {
                             blocking: {
@@ -42,12 +45,19 @@ export const getRecommend = async () => {
                     }
                 ]
             },
+            include: {
+                stream: true
+            },
             orderBy: {
                 createdAt: 'desc'
             }
         })
+
     } else {
         users = await db.user.findMany({
+            include: {
+                stream: true
+            },
             orderBy: {
                 createdAt: 'desc'
             }
