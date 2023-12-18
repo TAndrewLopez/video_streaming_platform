@@ -1,13 +1,13 @@
 "use client";
 
 import { useSidebar } from "@/store/useSidebar";
-import { Follow, Stream, User } from "@prisma/client";
+import { Follow, User } from "@prisma/client";
 import { UserItem, UserItemSkelton } from "./userItem";
 
 type Props = {
   data: (Follow & {
     following: User & {
-      stream: Stream | null;
+      stream: { isLive: boolean } | null;
     };
   })[];
 };

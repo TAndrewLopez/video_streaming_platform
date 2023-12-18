@@ -1,12 +1,12 @@
 "use client";
 
-import { Stream, User } from "@prisma/client";
+import { User } from "@prisma/client";
 import { useSidebar } from "@/store/useSidebar";
 import { UserItem, UserItemSkelton } from "./userItem";
 
 type Props = {
   data: (User & {
-    stream: Stream | null;
+    stream: { isLive: boolean } | null;
   })[];
 };
 
