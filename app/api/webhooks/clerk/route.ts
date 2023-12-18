@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     }
 
     // GET THE ID AND EVENT TYPE
-    const { id } = evt.data;
+    // const { id } = evt.data;
     const eventType = evt.type;
 
     // console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
@@ -58,6 +58,11 @@ export async function POST(req: Request) {
                 externalUserID: payload.data.id,
                 username: payload.data.username,
                 imageURL: payload.data.image_url,
+                stream: {
+                    create: {
+                        name: `${payload.data.username}'s stream`
+                    }
+                }
             }
         })
     }
