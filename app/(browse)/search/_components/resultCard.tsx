@@ -1,4 +1,4 @@
-import { Stream, User } from "@prisma/client"
+import { User } from "@prisma/client"
 import { formatDistanceToNow } from "date-fns"
 import Link from "next/link"
 
@@ -7,7 +7,12 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { VerifiedMark } from "@/components/verifiedMark"
 
 type Props = {
-    data: Stream & {
+    data: {
+        id: string;
+        name: string;
+        thumbnailURL: string | null;
+        isLive: boolean;
+        updatedAt: Date;
         user: User
     }
 }
