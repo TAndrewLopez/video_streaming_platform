@@ -1,15 +1,18 @@
-import { Stream, User } from "@prisma/client"
+import { User } from "@prisma/client"
 import Link from "next/link"
 
-import { LiveBadge } from "@/components/liveBadge"
 import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail"
 import { Skeleton } from "@/components/ui/skeleton"
 import { UserAvatar, UserAvatarSkeleton } from "@/components/userAvatar"
 
 
 type Props = {
-    data: Stream & { user: User }
-
+    data: {
+        user: User;
+        isLive: boolean;
+        name: string;
+        thumbnailURL: string | null
+    }
 }
 
 export const ResultCard = ({ data: { name, user, thumbnailURL, isLive } }: Props) => {
@@ -23,13 +26,6 @@ export const ResultCard = ({ data: { name, user, thumbnailURL, isLive } }: Props
                     isLive={isLive}
                     username={user.username}
                 />
-                {
-                    isLive && (
-                        <div className="absolute top-2 left-2 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform">
-                            <LiveBadge />
-                        </div>
-                    )
-                }
 
                 <div className="flex gap-x-3">
                     <UserAvatar

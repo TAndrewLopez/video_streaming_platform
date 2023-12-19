@@ -13,14 +13,28 @@ import { Video, VideoSkeleton } from "./video";
 import { InfoCard } from "./infoCard";
 import { AboutCard } from "./aboutCard";
 
+type CustomStream = {
+  id: string;
+  isChatEnabled: boolean;
+  isChatDelayed: boolean;
+  isChatFollowersOnly: boolean;
+  isLive: boolean;
+  thumbnailURL: string | null;
+  name: string
+}
+
+type CustomUser = {
+  id: string;
+  username: string;
+  bio: string | null;
+  stream: CustomStream | null;
+  imageURL: string;
+  _count: { followedBy: number }
+}
+
 type Props = {
-  user: User & {
-    stream: Stream | null;
-    _count: {
-      followedBy: number
-    }
-  };
-  stream: Stream;
+  user: CustomUser
+  stream: CustomStream;
   isFollowing: boolean;
 };
 
