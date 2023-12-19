@@ -24,3 +24,4 @@ export const updateUser = async (values: Partial<User>) => {
 
     return user
 }
+
