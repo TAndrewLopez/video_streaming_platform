@@ -1,7 +1,8 @@
 'use server'
 
-import { blockUser, unblockUser } from "@/lib/blockedService"
 import { revalidatePath } from "next/cache"
+
+import { blockUser, unblockUser } from "@/lib/blockedService"
 
 export const onBlock = async (id: string) => {
     // TODO: ADAPT TO DISCONNECT FROM LIVESTREAM

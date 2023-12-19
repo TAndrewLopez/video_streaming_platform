@@ -1,5 +1,4 @@
 import { Skeleton } from "@/components/ui/skeleton";
-
 import { ToggleCardSkeleton } from "./_components/toggleCard";
 
 type Props = {};

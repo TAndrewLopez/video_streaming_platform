@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { Participant, Track } from "livekit-client";
 import { useTracks } from "@livekit/components-react";
-import { FullScreenControl } from "./fullscreenControl";
+import { Participant, Track } from "livekit-client";
+import { useEffect, useRef, useState } from "react";
 import { useEventListener } from "usehooks-ts";
+
+import { FullScreenControl } from "./fullscreenControl";
 import { VolumeControl } from "./volumeControl";
 
 type Props = {

@@ -1,14 +1,16 @@
 "use client";
 
-import { ConnectionState, Track } from "livekit-client";
 import {
   useConnectionState,
   useRemoteParticipant,
   useTracks,
 } from "@livekit/components-react";
-import { OfflineVideo } from "./offlineVideo";
-import { LoadingVideo } from "./loadingVideo";
+import { ConnectionState, Track } from "livekit-client";
+
+import { Skeleton } from "../ui/skeleton";
 import { LiveVideo } from "./liveVideo";
+import { LoadingVideo } from "./loadingVideo";
+import { OfflineVideo } from "./offlineVideo";
 
 type Props = {
   hostIdentity: string;
@@ -34,4 +36,12 @@ export const Video = ({ hostIdentity, hostName }: Props) => {
   }
 
   return <div className="aspect-video border-b group relative">{content}</div>;
+};
+
+export const VideoSkeleton = () => {
+  return (
+    <div className="aspect-video border-x border-background">
+      <Skeleton className="h-full w-full rounded-none" />
+    </div>
+  );
 };

@@ -1,7 +1,8 @@
 "use client";
 
-import { useSidebar } from "@/store/useSidebar";
 import { Follow, User } from "@prisma/client";
+
+import { useSidebar } from "@/store/useSidebar";
 import { UserItem, UserItemSkelton } from "./userItem";
 
 type Props = {

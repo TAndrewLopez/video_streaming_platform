@@ -1,6 +1,6 @@
-import { Clapperboard, LogOut } from "lucide-react";
+import { UserButton } from "@clerk/nextjs";
+import { LogOut } from "lucide-react";
 import Link from "next/link";
-import { SignInButton, UserButton, currentUser } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 

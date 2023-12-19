@@ -2,9 +2,9 @@
 
 import { MessageSquare, Users } from "lucide-react";
 
+import { ChatVariant, useChatSidebar } from "@/store/useChatSidebar";
 import { Hint } from "../hint";
 import { Button } from "../ui/button";
-import { ChatVariant, useChatSidebar } from "@/store/useChatSidebar";
 
 type Props = {};
 

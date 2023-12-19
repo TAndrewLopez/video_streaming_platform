@@ -1,6 +1,7 @@
 "use client";
 
 import { User } from "@prisma/client";
+
 import { useSidebar } from "@/store/useSidebar";
 import { UserItem, UserItemSkelton } from "./userItem";
 

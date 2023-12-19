@@ -1,6 +1,5 @@
 import { getFollowedUsers } from "@/lib/followService";
 import { getRecommend } from "@/lib/recommendService";
-
 import { Following, FollowingSkeleton } from "./following";
 import { Recommended, RecommendedSkeleton } from "./recommended";
 import { Toggle, ToggleSkeleton } from "./toggle";

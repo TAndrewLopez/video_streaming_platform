@@ -4,9 +4,9 @@ import { useIsClient } from "usehooks-ts";
 
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/store/useSidebar";
-import { ToggleSkeleton } from "./toggle";
-import { RecommendedSkeleton } from "./recommended";
 import { FollowingSkeleton } from "./following";
+import { RecommendedSkeleton } from "./recommended";
+import { ToggleSkeleton } from "./toggle";
 
 type Props = {
   children: React.ReactNode;

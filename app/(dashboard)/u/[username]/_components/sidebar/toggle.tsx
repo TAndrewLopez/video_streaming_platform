@@ -1,9 +1,10 @@
 "use client";
 
+import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
+
 import { Hint } from "@/components/hint";
 import { Button } from "@/components/ui/button";
 import { useCreatorSidebar } from "@/store/useCreatorSidebar";
-import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
 
 type Props = {};
 

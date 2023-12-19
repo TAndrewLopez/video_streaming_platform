@@ -1,8 +1,9 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { useSidebar } from "@/store/useSidebar";
+
 import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
 
+import { useSidebar } from "@/store/useSidebar";
+import { Button } from "@/components/ui/button";
 import { Hint } from "@/components/hint";
 import { Skeleton } from "@/components/ui/skeleton";
 

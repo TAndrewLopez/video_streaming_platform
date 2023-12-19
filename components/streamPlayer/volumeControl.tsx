@@ -2,8 +2,8 @@
 
 import { Volume1, Volume2, VolumeX } from "lucide-react";
 
-import { Hint } from "../hint";
 import { Slider } from "@/components/ui/slider";
+import { Hint } from "../hint";
 
 type Props = {
   onChange: (value: number) => void;

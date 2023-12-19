@@ -2,9 +2,9 @@
 
 import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
 
+import { useChatSidebar } from "@/store/useChatSidebar";
 import { Hint } from "../hint";
 import { Button } from "../ui/button";
-import { useChatSidebar } from "@/store/useChatSidebar";
 
 type Props = {};
 

@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 import { Skeleton } from "../ui/skeleton";
 import { ChatInfo } from "./chatInfo";
 

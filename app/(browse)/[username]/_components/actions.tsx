@@ -1,10 +1,10 @@
 "use client";
 
 import { useTransition } from "react";
+import { toast } from "sonner";
 
 import { onFollow, onUnFollow } from "@/actions/follow";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import { onBlock, onUnblock } from "@/actions/block";
 
 type Props = {
