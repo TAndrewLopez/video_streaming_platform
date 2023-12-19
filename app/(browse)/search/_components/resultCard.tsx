@@ -1,5 +1,5 @@
 import { User } from "@prisma/client"
-import { formatDistanceToNow } from "date-fns"
+import moment from 'moment'
 import Link from "next/link"
 
 import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail"
@@ -42,9 +42,7 @@ export const ResultCard = ({ data: { user, thumbnailURL, isLive, name, updatedAt
                     </p>
                     <p className="text-sm text-muted-foreground">
                         Last live: {
-                            formatDistanceToNow(new Date(updatedAt), {
-                                addSuffix: true
-                            })
+                            moment(new Date(updatedAt)).fromNow()
                         }
                     </p>
                 </div>

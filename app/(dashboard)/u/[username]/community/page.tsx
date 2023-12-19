@@ -1,7 +1,7 @@
 import { getBlockedUsers } from "@/lib/blockedService";
 import { columns } from "./_components/columns";
 import { DataTable } from "./_components/data-table";
-import { format } from "date-fns";
+import moment from 'moment'
 
 
 type Props = {}
@@ -14,9 +14,8 @@ const Page = async ({ }: Props) => {
         userID: block.blocked.id,
         imageURL: block.blocked.imageURL,
         username: block.blocked.username,
-        createdAt: format(new Date(block.blocked.createdAt), 'MM/dd/yyyy')
+        createdAt: moment(new Date(block.blocked.createdAt)).format('MM/DD/yyyy')
     }))
-
     return (
         <div className="p-6">
             <div className="mb-4">
