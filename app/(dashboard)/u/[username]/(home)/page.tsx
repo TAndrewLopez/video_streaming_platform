@@ -1,6 +1,7 @@
+import { currentUser } from "@clerk/nextjs";
+
 import { StreamPlayer } from "@/components/streamPlayer";
 import { getUserByUsername } from "@/lib/userService";
-import { currentUser } from "@clerk/nextjs";
 
 type Props = {
   params: {
