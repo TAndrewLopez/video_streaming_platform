@@ -1,9 +1,15 @@
 "use client";
 
-import { useState, useTransition, useRef, ElementRef } from "react";
-import { useRouter } from "next/navigation";
 import { Trash } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { ElementRef, useRef, useState, useTransition } from "react";
+import { toast } from "sonner";
 
+import { updateStream } from "@/actions/stream";
+import { UploadDropzone } from "@/lib/uploadthing";
+import { Hint } from "../hint";
+import { Button } from "../ui/button";
 import {
     Dialog,
     DialogClose,
@@ -12,14 +18,8 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "../ui/dialog";
-import { UploadDropzone } from "@/lib/uploadthing";
-import { Button } from "../ui/button";
-import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import { updateStream } from "@/actions/stream";
-import { toast } from "sonner";
-import { Hint } from "../hint";
-import Image from "next/image";
+import { Label } from "../ui/label";
 
 type Props = {
     initialName: string;

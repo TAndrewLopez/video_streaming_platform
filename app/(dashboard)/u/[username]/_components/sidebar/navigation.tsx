@@ -8,7 +8,7 @@ import { NavItem, NavItemSkeleton } from "./navItem";
 
 type Props = {};
 
-const Navigation = ({}: Props) => {
+export const Navigation = ({ }: Props) => {
   const pathname = usePathname();
   const { user } = useUser();
 
@@ -44,4 +44,4 @@ const Navigation = ({}: Props) => {
   );
 };
 
-export default Navigation;
+

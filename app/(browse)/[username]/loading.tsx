@@ -2,7 +2,7 @@ import { StreamPlayerSkeleton } from "@/components/streamPlayer"
 
 type Props = {}
 
-const Loading = ({ }: Props) => {
+const LoadingPage = ({ }: Props) => {
     return (
         <div className="h-full">
             <StreamPlayerSkeleton />
@@ -10,4 +10,4 @@ const Loading = ({ }: Props) => {
     )
 }
 
-export default Loading
+export default LoadingPage

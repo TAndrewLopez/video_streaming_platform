@@ -21,8 +21,6 @@ const Page = async ({ params }: Props) => {
 
   if (isBlocked) notFound()
 
-
-
   return <StreamPlayer
     isFollowing={isFollowing}
     stream={user.stream}

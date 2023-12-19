@@ -1,0 +1,60 @@
+import { db } from "./db"
+import { getSelf } from "./authService"
+
+export const getStreams = async () => {
+    let userID;
+
+    try {
+        const self = await getSelf()
+        userID = self.id
+    } catch (error) {
+        userID = null
+    }
+
+    let streams = []
+
+    if (userID) {
+        streams = await db.stream.findMany({
+            where: {
+                user: {
+                    NOT: {
+                        blocking: {
+                            some: {
+                                blockedID: userID
+                            }
+                        }
+                    }
+                }
+            },
+            include: {
+                user: true,
+            },
+            orderBy: [
+                {
+                    isLive: 'desc'
+                },
+                {
+                    updatedAt: 'desc'
+                }
+            ]
+        })
+    } else {
+        streams = await db.stream.findMany({
+            include: {
+                user: true
+            },
+            orderBy: [
+                {
+                    isLive: 'desc'
+                },
+                {
+                    updatedAt: 'desc'
+                }
+            ]
+        })
+    }
+
+    return streams
+
+}
+

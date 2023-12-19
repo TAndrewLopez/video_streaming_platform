@@ -1,8 +1,9 @@
 "use client";
 
 import { Pencil } from "lucide-react";
-import { Separator } from "../ui/separator";
 import Image from "next/image";
+import { Separator } from "../ui/separator";
+
 import { InfoModal } from "./infoModal";
 
 type Props = {

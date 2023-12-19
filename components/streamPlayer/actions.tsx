@@ -3,11 +3,11 @@
 import { useAuth } from "@clerk/nextjs";
 import { HeartIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useTransition } from "react";
 import { toast } from "sonner";
 
 import { onFollow, onUnFollow } from "@/actions/follow";
 import { cn } from "@/lib/utils";
-import { useTransition } from "react";
 import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
 

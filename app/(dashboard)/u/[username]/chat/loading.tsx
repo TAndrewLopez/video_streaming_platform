@@ -3,7 +3,7 @@ import { ToggleCardSkeleton } from "./_components/toggleCard";
 
 type Props = {};
 
-const Loading = ({}: Props) => {
+const LoadingPage = ({ }: Props) => {
   return (
     <div className="p-6 space-y-4">
       <Skeleton className="h-10 w-[200px]" />
@@ -16,4 +16,4 @@ const Loading = ({}: Props) => {
   );
 };
 
-export default Loading;
+export default LoadingPage;
